@@ -12,5 +12,4 @@ data class Market (
     val address: String,
     val phone: String,
     val cover: String
-
 )

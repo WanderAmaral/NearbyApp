@@ -1,6 +1,7 @@
 package com.example.nearby.data.model
 
 import androidx.annotation.DrawableRes
+import com.example.nearby.ui.components.category.CategoryFilterChipView
 
 data class Category(val id: String, val name: String) {
     @get:DrawableRes
