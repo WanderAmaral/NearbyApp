@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.nearby.data.model.Rule
-import com.example.nearby.data.model.mock.mockRules
+import com.example.nearby.data.model.mock.mockRulesData
 import com.example.nearby.ui.theme.Gray400
 import com.example.nearby.ui.theme.Gray500
 import com.example.nearby.ui.theme.Typography
@@ -34,5 +34,5 @@ fun NearbyMarketDetailsRules(modifier: Modifier = Modifier, rules: List<Rule>) {
 @Preview
 @Composable
 private fun MarketDetailsRulesPreview() {
-    NearbyMarketDetailsRules(modifier = Modifier.fillMaxWidth(), rules = mockRules)
+    NearbyMarketDetailsRules(modifier = Modifier.fillMaxWidth(), rules = mockRulesData)
 }
