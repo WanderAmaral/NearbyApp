@@ -1,6 +1,7 @@
 package com.example.nearby.data.model.mock
 
 import com.example.nearby.data.model.Market
+import com.example.nearby.data.model.Rule
 
 val mockMarkets = listOf(
     Market(
@@ -9,7 +10,18 @@ val mockMarkets = listOf(
         name = "Sabor Grill",
         description = "Churrascaria com corte nobres e buffer variado. Experiência completa para os amantes de carne.",
         coupons = 10,
-        rules = emptyList(),
+        rules = listOf(
+            Rule(
+                id = "1",
+                description = "Válido até dia 30/12/2024",
+                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
+            ),
+            Rule(
+                id = "2",
+                description = "Consumo no local",
+                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
+            ),
+        ),
         latitude = -23.12345678910,
         longitude = -46.12345678910,
         address = "Av. Paulista - Bela vista",

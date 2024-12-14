@@ -48,7 +48,7 @@ fun NearbyMarketDetailsCoupons(modifier: Modifier = Modifier, coupons: List<Stri
                     tint = GreenBase,
                     contentDescription = "Icone Cupom"
                 )
-                Text(text = coupon, style = Typography.labelSmall)
+                Text(text = coupon, style = Typography.bodyLarge)
             }
         }
     }
