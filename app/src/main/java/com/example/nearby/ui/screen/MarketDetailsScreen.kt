@@ -36,7 +36,7 @@ import com.example.nearby.ui.components.market_details.NearbyMarketDetailsRules
 import com.example.nearby.ui.theme.Typography
 
 @Composable
-fun MarketDetailsScreen(modifier: Modifier = Modifier, market: Market) {
+fun MarketDetailsScreen(modifier: Modifier = Modifier, market: Market, onNavigateBack: () -> Unit) {
     Box(modifier = modifier.fillMaxSize()) {
         AsyncImage(
             modifier = Modifier
@@ -45,14 +45,6 @@ fun MarketDetailsScreen(modifier: Modifier = Modifier, market: Market) {
             model = market.cover,
             contentDescription = "Imagem do Local"
         )
-//        Image(
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .fillMaxHeight(.3f),
-//            contentScale = ContentScale.Crop,
-//            painter = painterResource(id = R.drawable.img_burger),
-//            contentDescription = "Imagem do Local"
-//        )
         Box(
             modifier = Modifier
                 .clip(RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp))
@@ -67,47 +59,56 @@ fun MarketDetailsScreen(modifier: Modifier = Modifier, market: Market) {
                     .fillMaxHeight()
                     .padding(16.dp)
             ) {
-
+                Column {
+                    Text(text = market.name, style = Typography.headlineLarge)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(text = market.description, style = Typography.bodyLarge)
+                }
+                Spacer(modifier = Modifier.height(48.dp))
                 Column(
                     modifier = Modifier
                         .weight(1f)
                         .verticalScroll(rememberScrollState())
                 ) {
-                    Column {
-                        Text(text = market.name, style = Typography.headlineLarge)
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(text = market.description, style = Typography.bodyLarge)
-                    }
-                    Spacer(modifier = Modifier.height(48.dp))
+
                     NearbyMarketDetailsInfos(market = market)
                     HorizontalDivider(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 24.dp)
                     )
-                    if (market.rules.isNotEmpty()) {
-                        NearbyMarketDetailsRules(rules = market.rules)
-                        HorizontalDivider(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 24.dp)
-                        )
-                    }
-                    NearbyMarketDetailsCoupons(coupons =  listOf("ABC12345"))
+//                    if (market.rules.isNotEmpty()) {
+//                        NearbyMarketDetailsRules(rules = market.rules)
+//                        HorizontalDivider(
+//                            modifier = Modifier
+//                                .fillMaxWidth()
+//                                .padding(vertical = 24.dp)
+//                        )
+//                    }
+                    NearbyMarketDetailsCoupons(coupons = listOf("ABC12345"))
                 }
                 NearbyButton(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(24.dp),
                     text = "Ler QR Code",
-                    onClick = {})
+                    onClick = {}
+                )
             }
         }
+        NearbyButton(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(24.dp),
+            iconRes = R.drawable.ic_arrow_left,
+            onClick = onNavigateBack
+        )
+
     }
 }
 
 @Preview
 @Composable
 private fun MarketDetailsScreenPreview() {
-    MarketDetailsScreen(market = mockMarkets.first())
+    MarketDetailsScreen(market = mockMarkets.first(), onNavigateBack = {})
 }

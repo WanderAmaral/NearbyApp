@@ -10,18 +10,18 @@ val mockMarkets = listOf(
         name = "Sabor Grill",
         description = "Churrascaria com corte nobres e buffer variado. Experiência completa para os amantes de carne.",
         coupons = 10,
-        rules = listOf(
-            Rule(
-                id = "1",
-                description = "Válido até dia 30/12/2024",
-                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
-            ),
-            Rule(
-                id = "2",
-                description = "Consumo no local",
-                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
-            ),
-        ),
+//        rules = listOf(
+//            Rule(
+//                id = "1",
+//                description = "Válido até dia 30/12/2024",
+//                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
+//            ),
+//            Rule(
+//                id = "2",
+//                description = "Consumo no local",
+//                marketId = "5533b090-b95e-11ef-bd75-910c78c6f893"
+//            ),
+//        ),
         latitude = -23.12345678910,
         longitude = -46.12345678910,
         address = "Av. Paulista - Bela vista",
@@ -34,7 +34,7 @@ val mockMarkets = listOf(
         name = "Café Aroma",
         description = "Cafeteria aconchegante com uma seleção especial de grãos e quitutes artesanais.",
         coupons = 5,
-        rules = emptyList(),
+        //rules = emptyList(),
         latitude = -22.98765432110,
         longitude = -47.98765432110,
         address = "Rua das Flores, 123 - Centro",
